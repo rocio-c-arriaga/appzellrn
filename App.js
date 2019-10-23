@@ -16,9 +16,12 @@ import {
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
+
 import Login from './src/pages/Login';
 import Signup from './src/pages/Signup';
-import MenuPrincipal from './src/components/Menu';
+import ActivacionV from './src/components/Activacion';
+import Forgot from './src/components/Forgot';
+import Hello from './src/components/Bienvenido';
 
 
 class zellApp extends React.Component {
@@ -47,14 +50,37 @@ const styles = StyleSheet.create({
 
 const AppNavigator = createStackNavigator(
   {
-  Home: zellApp,
+  Home:  {
+    screen: zellApp,
+    navigationOptions: {
+      header: null, 
+    },  
+  },
+  
   Iniciar: Login,
-  Registrar: Signup,
-  Menu: MenuPrincipal
+  Registrar: {
+    screen:  Signup,
+    navigationOptions: {
+      // desaparece el header y el boton de regresar predeterminado https://stackoverflow.com/questions/51129444/how-to-hide-header-of-createstacknavigator-on-react-native
+      header: null, 
+    },  
+  },
+ 
+  Activacion: {
+    screen: ActivacionV,
+    navigationOptions: {
+      header: null, 
+    },  
+  },
+  Restauracion: Forgot,
+  Bienvenido: Hello,
+  Salir: Login
   },
   {
     initialRouteName: 'Iniciar',
   }
 );
+
+
 
 export default createAppContainer(AppNavigator);

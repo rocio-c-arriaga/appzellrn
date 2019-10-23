@@ -10,36 +10,42 @@ class FormSign extends Component {
                 <TextInput style={styles.inputBox} 
                 underlineColorAndroid={'transparent'}
                 placeholder="Primer nombre"
-                placeholderTextColor='rgba(255, 255, 255, 0.7)'               
+                placeholderTextColor='rgba(255, 255, 255, 0.7)'     
+                maxLength={20}           
                  />
                 <TextInput style={styles.inputBox} 
                 underlineColorAndroid={'transparent'}
                 placeholder="Segundo nombre"
-                placeholderTextColor='rgba(255, 255, 255, 0.7)'               
+                placeholderTextColor='rgba(255, 255, 255, 0.7)'
+                maxLength={20}                
                  />
                  <TextInput style={styles.inputBox} 
                 underlineColorAndroid={'transparent'}
                 placeholder="Primer apellido"
-                placeholderTextColor='rgba(255, 255, 255, 0.7)'               
+                placeholderTextColor='rgba(255, 255, 255, 0.7)'
+                maxLength={20}                
                  />
                  <TextInput style={styles.inputBox} 
                 underlineColorAndroid={'transparent'}
                 placeholder="Segundo apellido"
-                placeholderTextColor='rgba(255, 255, 255, 0.7)'               
+                placeholderTextColor='rgba(255, 255, 255, 0.7)'
+                maxLength={20}                
                  />
                  <TextInput style={styles.inputBox} 
                 underlineColorAndroid={'transparent'}
                 placeholder="correoelectrónico@zell.com"
-                placeholderTextColor='rgba(255, 255, 255, 0.7)'               
+                placeholderTextColor='rgba(255, 255, 255, 0.7)'
+                maxLength={20}                
                  />
                  <TextInput style= {styles.inputBox} 
                 underlineColorAndroid={'transparent'}
                 placeholder="Contraseña"
                 secureTextEntry= {true}      
-                placeholderTextColor='rgba(255, 255, 255, 0.7)'            
+                placeholderTextColor='rgba(255, 255, 255, 0.7)'
+                maxLength={20}             
                  />
             <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText} onPress={() => this.props.navigation.navigate('Menu')}>Registrarme</Text>
+                <Text style={styles.buttonText} onPress={() => this.props.navigation.navigate('Activacion')}>Registrarme</Text>
             </TouchableOpacity>
             </View>
         )

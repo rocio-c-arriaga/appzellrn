@@ -9,7 +9,28 @@ const User = t.struct ({
     email: t.String,
     terms: t.Boolean,
 })
+
+
+    validate(text,type)
+    {
+        alph= /^[a-zA-Z]+$/
+      
+        if(type=='correoelectrónico@zell.com')
+        {
+            if(alph.test(text))
+            {
+                console.warn("text is correct") 
+            }
+            else
+            {4596
+                console.warn("invalid text")
+            }
+
+        }
+    }
+
 */
+
 class Form extends React.Component {
     constructor(props) {
         super(props);
@@ -18,6 +39,8 @@ class Form extends React.Component {
             password: ''
         }
     }
+
+
     render() {
         return (
             <View style={styles.container}>
@@ -29,8 +52,9 @@ class Form extends React.Component {
                 underlineColorAndroid={'transparent'}
                 placeholder="correoelectrónico@zell.com"
                 placeholderTextColor='rgba(255, 255, 255, 0.7)' 
-                onChangeText={(text) => this.validate (text)}
-                value={this.state.email}              
+                /*onChangeText={(text) => this.validate (text, 'correoelectrónico@zell.com')}
+                value={this.state.email}*/
+                maxLength={20}              
                  />
                  <TextInput
                  id='password'
@@ -38,11 +62,12 @@ class Form extends React.Component {
                 underlineColorAndroid={'transparent'}
                 placeholder="Contraseña"
                 secureTextEntry= {true}      
-                placeholderTextColor='rgba(255, 255, 255, 0.7)'            
+                placeholderTextColor='rgba(255, 255, 255, 0.7)'   
+                maxLength={20}          
                  /> 
                       
             <TouchableOpacity style={styles.button} onPress={this.validateData}>
-                <Text style={styles.buttonText}>Iniciar sesión</Text>
+                <Text style={styles.buttonText} onPress={() => this.props.navigation.navigate('Bienvenido')}>Iniciar sesión</Text>
             </TouchableOpacity>
             </View>
         )
@@ -54,6 +79,7 @@ class Form extends React.Component {
 function validateData() {
     //REGEX
     //EMAIL
+
     //PASSWORD
 
     if (valido) {

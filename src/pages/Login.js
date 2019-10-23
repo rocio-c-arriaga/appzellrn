@@ -26,13 +26,13 @@ export default class Login extends React.Component {
                 <Logo />
                 <Form type="Signup" />
                 <View>
-                <Text style={styles.registroText}>¿Olvidaste tu contraseña?</Text>
+                <Text style={styles.registroTexto} onPress={() => this.props.navigation.navigate('Restauracion')}>¿Olvidaste tu contraseña? </Text>
 
                 </View>
 
                 <View style={styles.registroTextCont}>
                     <Text style={styles.registroText}>¿Eres nuevo usuario? </Text>
-                    <Text style={styles.registroBoton} onPress={() => this.props.navigation.navigate('Registrar')}>Registrate</Text>
+        <Text style={styles.registroBoton} onPress={() => this.props.navigation.navigate('Registrar')}>Registrate</Text> 
                 </View>
 
             </View>
@@ -58,6 +58,12 @@ const styles = StyleSheet.create({
     registroText: {
         color: 'rgba(255,255,255,0.6)',
         fontSize: 16
+        
+    },
+    registroText: {
+        color: 'rgba(255,255,255,0.6)',
+        fontSize: 16,
+        fontWeight: '500' 
     },
     registroBoton: {
      color: '#ffffff',
